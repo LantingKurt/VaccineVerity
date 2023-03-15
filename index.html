@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>PH Twitter Fake News Analysis</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="container">
+        <li><a href="#top">Top</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+    </nav>
+
+    <!-- Home -->
+    <article id="top" class="wrapper style1">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 col-5-large col-12-medium">
+            <span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
+          </div>
+          <div class="col-8 col-7-large col-12-medium">
+            <header>
+              <h1>Hi. We are <strong>Vaxxplorers</strong>.</h1>
+            </header>
+            <p>
+              And this is our project, <strong>VaccineVerity</strong>, We are a
+              team dedicated to tackling the issue of misinformation surrounding
+              COVID-19 vaccines. The spread of false information has caused
+              significant harm, especially in the early stages of vaccine
+              distribution in the Philippines. That's why we're committed to
+              debunking the claim that COVID-19 vaccines are ineffective and can
+              cause harm, including infection and death. At VaccineVerity, we
+              recognize the importance of combatting misinformation and its
+              impact on public opinion and vaccine uptake. To that end, we're
+              using data science to better understand the prevalence and effects
+              of vaccine misinformation, as well as to identify patterns and
+              factors that contribute to its spread. Our ultimate goal is to
+              develop effective tools and strategies to counter misinformation
+              and increase public trust in the safety and efficacy of COVID-19
+              vaccines. By doing so, we hope to help save lives and bring an end
+              to the pandemic as quickly as possible. Thank you for joining us
+              on this important mission.
+            </p>
+            <p>Data Science Team</p>
+            <ul style="list-style-type: none; margin-top: -30px">
+              <li>Alexandra Rain Castañeda, WFX</li>
+              <li>Kurt Lanting, WFX</li>
+              <li>Masayuki Inukai, WFX</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Overview -->
+    <article id="overview" class="wrapper style2">
+      <div class="container">
+        <header>
+          <h2>Here's an overview of our project.</h2>
+          <p></p>
+        </header>
+
+        <div class="row aln-center">
+          <div class="col-4 col-6-medium col-12-small">
+            <section class="box style1">
+              <h3>Motivation</h3>
+              <p>
+                The motivation of VaccineVerity is to combat the spread of
+                misinformation about COVID-19 vaccines and increase public trust
+                in their safety and effectiveness. They aim to address the
+                impact of conspiracy theories and misleading information on
+                public opinion and vaccine uptake, particularly in the
+                Philippines.
+              </p>
+            </section>
+          </div>
+
+          <div class="col-4 col-6-medium col-12-small">
+            <section class="box style1">
+              <h3>Problem</h3>
+              <p>
+                To address this problem, VaccineVerity proposes to use data
+                science to analyze and model the prevalence and impact of
+                vaccine misinformation on social media. The solution they
+                propose includes: collecting and analyzing tweets related to
+                COVID-19 vaccines and health-related side effects, identifying
+                the leading conspiracy theories and their drivers, and
+                developing strategies to counter vaccine hesitancy and
+                misinformation.
+              </p>
+            </section>
+          </div>
+
+          <div class="col-4 col-6-medium col-12-small">
+            <section class="box style1">
+              <h3>Solution</h3>
+              <p>
+                The research question, alternative hypothesis, and null
+                hypothesis provide a framework for VaccineVerity's data
+                gathering, analysis, and modeling efforts. The action plan
+                outlines the specific steps and techniques they will use to
+                derive conclusions and communicate the research findings.
+                Overall, VaccineVerity's motivation is to help save lives and
+                end the pandemic by combating misinformation and increasing
+                public trust in COVID-19 vaccines.
+              </p>
+            </section>
+          </div>
+        </div>
+
+        <footer></footer>
+      </div>
+
+      <div class="container">
+        <header>
+          <p></p>
+        </header>
+
+        <div class="row aln-center">
+          <div class="col-4 col-6-medium col-12-small">
+            <section class="box style1">
+              <h3>Research Question</h3>
+              <p>
+                What is the leading conspiracy theory that motivates
+                mis/disinformative tweets pertinent to health-related adverse
+                side effects of COVID-19 vaccines?
+              </p>
+            </section>
+          </div>
+
+          <div class="col-4 col-6-medium col-12-small">
+            <section class="box style1">
+              <h3>Null Hypothesis</h3>
+              <p>
+                Socio-political, economic, and culture-based conspiracy theories
+                about COVID-19 vaccines are equally influential in spreading
+                mis/disinformation and vaccine hesitancy.
+              </p>
+            </section>
+          </div>
+
+          <div class="col-4 col-6-medium col-12-small">
+            <section class="box style1">
+              <h3>Alternative Hypothesis</h3>
+              <p>
+                Social-political context is the primary impetus for conspiracy
+                theories circulated by mis/disinformative tweets about harmful
+                health-related side effects of COVID-19 vaccines.
+              </p>
+            </section>
+          </div>
+        </div>
+
+        <footer></footer>
+        <div class="col-4 col-6-medium col-12-small">
+          <section class="box style1">
+            <h3>Action Plan</h3>
+            <br />
+            <h4>Phase 1: Data Gathering</h4>
+            <li>
+              Collect tweets containing keywords related to COVID-19 vaccines
+              and health-related side effects.
+            </li>
+            <li>
+              Filter mis/disinformative tweets using an automated tool and
+              manual inspection.
+            </li>
+            <li>
+              Categorize tweets based on the leading conspiracy theories they
+              promote.
+            </li>
+            <li>
+              Collect metadata on the tweet authors, such as location, political
+              affiliation, and past tweet history.
+            </li>
+
+            <br />
+            <h4>Phase 2: Analyzing and Modeling</h4>
+            <li>
+              Use natural language processing techniques to analyze the content
+              and sentiment of the collected tweets.
+            </li>
+            <li>
+              Apply topic modeling algorithms to identify the leading conspiracy
+              theories and their prevalence in the data.
+            </li>
+            <li>
+              Conduct statistical analysis to determine the correlation between
+              the identified conspiracy theories and the socio-political context
+              of the tweet authors.
+            </li>
+            <li>
+              Develop a predictive model to identify the likelihood of a tweet
+              promoting a particular conspiracy theory based on the tweet
+              author's profile and the tweet's content.
+            </li>
+            <br />
+
+            <h4>Phase 3: Deriving Conclusions</h4>
+            <li>
+              Compare the results of the analysis with the alternative and null
+              hypotheses.
+            </li>
+            <li>
+              Identify the leading conspiracy theory and its drivers in the
+              analyzed tweets.
+            </li>
+            <li>
+              Evaluate the effectiveness of current strategies to counter
+              vaccine hesitancy based on the identified drivers of
+              mis/disinformative tweets.
+            </li>
+            <br />
+            <h4>Phase 4: Communicating</h4>
+            <li>
+              Design and develop a website to present the research findings in
+              an accessible and engaging format.
+            </li>
+            <li>
+              Write clear and concise summaries of the research question,
+              hypotheses, data gathering process, and analysis techniques.
+            </li>
+            <li>
+              Create visualizations, such as graphs and charts, to illustrate
+              the results of the analysis. Provide recommendations for public
+              health officials, social media platforms, and other stakeholders
+              based on the research findings.
+            </li>
+            <li>
+              Incorporate user feedback to improve the website's accessibility,
+              usability, and effectiveness in communicating the research
+              findings.
+            </li>
+            <li>
+              Promote the website through social media channels, email
+              newsletters, and other outreach efforts to reach a wide audience.
+            </li>
+          </section>
+        </div>
+
+        <footer></footer>
+      </div>
+    </article>
+
+    <!-- Contact Us -->
+
+    <article id="data" class="wrapper style3">
+      <div class="container">
+        <header>
+          <h2>Contact us!</h2>
+        </header>
+        <div class="row">
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic01.jpg" alt=""
+              /></a>
+              <h3><a href="#">Alexandra Rain Castañeda</a></h3>
+              <p>
+                Email: aacastaneda1@up.edu.ph <br />
+                <a href="https://www.facebook.com/alexandra.ulan">Facebook</a>
+                <br />
+                <a href="https://linkedin.com/in/alexandra-rain-c">LinkedIn</a
+                ><br />
+
+                <a href="https://github.com/Alexandra-R-C">GitHub</a><br />
+              </p>
+
+              <p>
+                My name is Rain and I am a junior undergraduate, taking up B.Sc.
+                Computer Science at the University of the Philippines - Diliman.
+                In my free time, I love reading investigative thriller novels. I
+                also try to keep my passion for writing alive amid the hustle
+                and bustle of college life. A published work that I am proudest
+                of so far is my contribution to an anthology series by Write the
+                World—a community for young writers—that calls for climate
+                action.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic02.jpg" alt=""
+              /></a>
+              <h3><a href="#">Kurt Lanting</a></h3>
+              <p>
+                Email: lantingkurt@gmail.com<br />
+
+                <a href="https://www.facebook.com/kurt.lanting">Facebook</a>
+                <br />
+
+                <a href="https://linkedin.com/in/kurt-lanting-b6a194217"
+                  >LinkedIn</a
+                >
+                <br />
+                <a href="https://github.com/LantingKurt">GitHub</a><br />
+              </p>
+
+              <p>
+                Hi! I'm Kurt Lanting, a Computer Science student at the
+                University of the Philippines Diliman with a strong passion for
+                technology, finance, physical fitness, cooking, martial arts,
+                and photography. I am a well-rounded individual who seeks to
+                learn and grow, and I have gained valuable leadership experience
+                through involvement in various student councils and
+                organizations. My operations, project management, event
+                planning, and team handling skills were developed and honed
+                through my leadership experiences, making me a highly motivated
+                and dedicated individual committed to positively impacting the
+                organizations I am involved in.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic03.jpg" alt=""
+              /></a>
+              <h3><a href="#">Masayuki Inukai</a></h3>
+              <p>
+                Email: mzinukai@up.edu.ph <br />
+
+                <a href="https://www.facebook.com/masayuki.inukai.7"
+                  >Facebook</a
+                >
+                <br />
+              </p>
+
+              <p>
+                Hi! I’m Masayuki Inukai, a 2nd year BS Computer Science student
+                at the University of the Philippines - Diliman. I’m an active
+                Youth For Christ (YFC) member and I have been serving as the
+                Chapter Head in our community for more than a year. During my
+                free time, I love to watch anime, read manga, and to listen to
+                my favorite J-pop music despite not understanding what the
+                lyrics say :>
+              </p>
+            </article>
+          </div>
+        </div>
+        <footer></footer>
+      </div>
+    </article>
+
+    <!-- Data -->
+    <article id="data" class="wrapper style3">
+      <div class="container">
+        <header>
+          <h2>We mined the internet for fake news data.</h2>
+          <p>
+            Proin odio consequat sapien vestibulum consequat lorem dolore
+            feugiat.
+          </p>
+        </header>
+        <div class="row">
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic05.jpg" alt=""
+              /></a>
+              <h3><a href="#">Topic</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic05.jpg" alt=""
+              /></a>
+              <h3><a href="#">Keywords</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic05.jpg" alt=""
+              /></a>
+              <h3><a href="#">Tools</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic04.jpg" alt=""
+              /></a>
+              <h3><a href="#">Tempus dolore</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic05.jpg" alt=""
+              /></a>
+              <h3><a href="#">Feugiat aliquam</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic06.jpg" alt=""
+              /></a>
+              <h3><a href="#">Sed amet ornare</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+        </div>
+        <footer>
+          <p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+        </footer>
+      </div>
+    </article>
+
+    <!-- Methods -->
+    <article id="methods" class="wrapper style3">
+      <div class="container">
+        <header>
+          <h2>Let's talk about our data science methodology.</h2>
+          <p>
+            Proin odio consequat sapien vestibulum consequat lorem dolore
+            feugiat.
+          </p>
+        </header>
+        <div class="row">
+          <div class="col-6 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic05.jpg" alt=""
+              /></a>
+              <h3><a href="#">Data Preprocessing</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+          <div class="col-6 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic05.jpg" alt=""
+              /></a>
+              <h3><a href="#">Machine Learning</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+        </div>
+        <footer>
+          <p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+        </footer>
+      </div>
+    </article>
+
+    <!-- Results -->
+    <article id="results" class="wrapper style3">
+      <div class="container">
+        <header>
+          <h2>Here's what we found out.</h2>
+          <p>
+            Proin odio consequat sapien vestibulum consequat lorem dolore
+            feugiat.
+          </p>
+        </header>
+        <div class="row">
+          <div class="col-6 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic05.jpg" alt=""
+              /></a>
+              <h3><a href="#">Results</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+          <div class="col-6 col-6-medium col-12-small">
+            <article class="box style2">
+              <a href="#" class="image featured"
+                ><img src="images/pic05.jpg" alt=""
+              /></a>
+              <h3><a href="#">Results</a></h3>
+              <p>Ornare nulla proin odio consequat.</p>
+            </article>
+          </div>
+        </div>
+        <footer>
+          <p>Want to learn more? Take a look at our source codes.</p>
+          <a href="#contact" class="button large scrolly">Github Repo</a>
+        </footer>
+      </div>
+    </article>
+
+    <!-- Team -->
+    <article id="team" class="wrapper style4">
+      <div class="container medium">
+        <header>
+          <h2>We'd like to hear from you.</h2>
+          <p>You can add more information about the team members here.</p>
+        </header>
+        <div class="row">
+          <div class="col-12">
+            <form method="post" action="#">
+              <div class="row">
+                <div class="col-6 col-12-small">
+                  <input type="text" name="name" id="name" placeholder="Name" />
+                </div>
+                <div class="col-6 col-12-small">
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="col-12">
+                  <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                  />
+                </div>
+                <div class="col-12">
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Message"
+                  ></textarea>
+                </div>
+                <div class="col-12">
+                  <ul class="actions">
+                    <li><input type="submit" value="Send Message" /></li>
+                    <li>
+                      <input type="reset" value="Clear Form" class="alt" />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-12">
+            <hr />
+            <h3>Find me on ...</h3>
+            <ul class="social">
+              <li>
+                <a href="#" class="icon brands fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-dribbble"
+                  ><span class="label">Dribbble</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-linkedin-in"
+                  ><span class="label">LinkedIn</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-tumblr"
+                  ><span class="label">Tumblr</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-google-plus"
+                  ><span class="label">Google+</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-github"
+                  ><span class="label">Github</span></a
+                >
+              </li>
+              <!--
+								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
+								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
+								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
+								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
+								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
+								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
+								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
+								-->
+            </ul>
+            <hr />
+          </div>
+        </div>
+        <footer>
+          <ul id="copyright">
+            <li>&copy; Untitled. All rights reserved.</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </footer>
+      </div>
+    </article>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
