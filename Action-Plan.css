@@ -593,3 +593,8 @@
 }html {
   scroll-behavior: smooth;
 }
+.caption {
+	background: linear-gradient(to bottom, #01e9bd, #007cde);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 

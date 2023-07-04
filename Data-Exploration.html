@@ -1,90 +1,947 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <title>Data Exploration</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Data-Exploration.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 5.10.8, nicepage.com">
-    <link rel="icon" href="images/favicon1.png">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
-    
-    
-    
-    
-    <script type="application/ld+json">{
+<html style="font-size: 16px;" lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>Data Exploration</title>
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+  <link rel="stylesheet" href="Data-Exploration.css" media="screen">
+  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+  <meta name="generator" content="Nicepage 5.10.8, nicepage.com">
+
+  <link rel="icon" href="images/favicon1.png">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "VaccineVerity",
 		"logo": "images/favicon1.png?rand=72be"
 }</script>
-    <meta name="theme-color" content="#00acee">
-    <meta property="og:title" content="Data Exploration">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-sticky u-sticky-5f9f u-white u-header" id="sec-ec7c"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="640" data-image-height="640">
-          <img src="images/favicon1.png?rand=72be" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; text-transform: uppercase; font-weight: 700;">
-            <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-text-shadow u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-custom-color-3 u-border-hover-custom-color-3 u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-custom-color-10" href="VaccineVerity.html" style="padding: 10px;">Home</a>
-</li><li class="u-nav-item"><a class="u-border-active-custom-color-3 u-border-hover-custom-color-3 u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-custom-color-10" href="Action-Plan.html" style="padding: 10px;">Action Plan</a>
-</li><li class="u-nav-item"><a class="u-border-active-custom-color-3 u-border-hover-custom-color-3 u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-custom-color-10" href="VaccineVerity.html#sec-71ea" style="padding: 10px;">Data</a><div class="u-nav-popup"><ul class="u-border-1 u-border-grey-30 u-h-spacing-21 u-nav u-unstyled u-v-spacing-17"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-custom-color-4 u-text-hover-custom-color-3 u-white" href="Data-Collection.html">Data Collection</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-custom-color-4 u-text-hover-custom-color-3 u-white" href="Data-Exploration.html">Data Exploration</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-custom-color-4 u-text-hover-custom-color-3 u-white" href="Data-Modelling.html">Data Modelling</a>
-</li></ul>
-</div>
-</li><li class="u-nav-item"><a class="u-border-active-custom-color-3 u-border-hover-custom-color-3 u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-custom-color-10" href="Results.html" style="padding: 10px;">Results</a>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="VaccineVerity.html">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Action-Plan.html">Action Plan</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="VaccineVerity.html#sec-71ea">Data</a><div class="u-nav-popup"><ul class="u-border-1 u-border-grey-30 u-h-spacing-21 u-nav u-unstyled u-v-spacing-17"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Data-Collection.html">Data Collection</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Data-Exploration.html">Data Exploration</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Data-Modelling.html">Data Modelling</a>
-</li></ul>
-</div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Results.html">Results</a>
-</li></ul>
+  <meta name="theme-color" content="#00acee">
+  <meta property="og:title" content="Data Exploration">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="en">
+
+  <header class="u-clearfix u-header u-sticky u-sticky-5f9f u-white u-header" id="sec-ec7c">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <a class="u-image u-logo u-image-1" data-image-width="640" data-image-height="640">
+        <img src="images/favicon1.png?rand=72be" class="u-logo-image u-logo-image-1">
+      </a>
+      <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+        <div class="menu-collapse"
+          style="font-size: 1rem; letter-spacing: 0px; text-transform: uppercase; font-weight: 700;">
+          <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-text-shadow u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+            href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+            </svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <rect y="1" width="16" height="2"></rect>
+                <rect y="7" width="16" height="2"></rect>
+                <rect y="13" width="16" height="2"></rect>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
+            <li class="u-nav-item"><a
+                class="u-border-active-custom-color-3 u-border-hover-custom-color-3 u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4"
+                href="index.html" style="padding: 10px;">Home</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-border-active-custom-color-3 u-border-hover-custom-color-3 u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4"
+                href="Action-Plan.html" style="padding: 10px;">Action Plan</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-border-active-custom-color-3 u-border-hover-custom-color-3 u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4"
+                rel="nofollow" style="padding: 10px;">Data</a>
+              <div class="u-nav-popup">
+                <ul class="u-border-1 u-border-grey-30 u-h-spacing-21 u-nav u-unstyled u-v-spacing-17">
+
+                  <li class="u-nav-item"><a
+                      class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                      href="Data-Collection.html">Data Collection</a>
+
+                    <div class="u-nav-popup">
+                      <ul class="u-border-1 u-border-grey-30 u-h-spacing-21 u-nav u-unstyled u-v-spacing-17">
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Collection.html#carousel_d27b">Tweets</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Collection.html#carousel_2ab3">Dataset</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </li>
+
+                  <li class="u-nav-item"><a
+                      class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                      href="Data-Exploration.html">Data Exploration</a>
+                    <div class="u-nav-popup">
+                      <ul class="u-border-1 u-border-grey-30 u-h-spacing-21 u-nav u-unstyled u-v-spacing-17">
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Google-Colab-Code.html">Google Colab Code</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Exploration.html#sec-7a91">Data Preprocessing</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Exploration.html#carousel_267c">Handling Missing Values</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Exploration.html#carousel_35ed">Ensuring Formatting Consistency</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Exploration.html#carousel_22b9">Categorical Data Encoding</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Exploration.html#carousel_0803">Handling Outliers</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Exploration.html#carousel_fff1">Normalization/Standardization/Scaling</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Exploration.html#carousel_13f0">Natural Language Processing</a>
+                        </li>
+
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Time-Series-Analysis.html">Time Series Analysis</a>
+                        </li>
+
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Time-Series-Analysis.html#carousel_c843">Interpolation</a>
+                        </li>
+
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Time-Series-Analysis.html#carousel_5971">Binning</a>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="u-nav-item"><a
+                      class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                      href="Data-Visualization.html">Data Visualization</a>
+                    <div class="u-nav-popup">
+                      <ul class="u-border-1 u-border-grey-30 u-h-spacing-21 u-nav u-unstyled u-v-spacing-17">
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Visualization.html#carousel_05e7">Types of Plots</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Visualization.html#carousel_c843">Scatterplots/Histograms</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Visualization.html#carousel_b060">Heat Maps</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Visualization-Bar.html">Bar/Swarm/Violin Plots</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Visualization-Bar.html#carousel_3262">Line Graphs</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="u-nav-item"><a
+                      class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                      href="Data-Modelling.html">Data Modelling</a>
+
+                    <div class="u-nav-popup">
+                      <ul class="u-border-1 u-border-grey-30 u-h-spacing-21 u-nav u-unstyled u-v-spacing-17">
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Modelling.html#sec-1ee7">Data Binning</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Modelling.html#carousel_80ac">Topic Clustering Using LDA and t-SNE</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </li>
+                  <li class="u-nav-item"><a
+                      class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                      href="Data-Communication.html">Data Communication</a>
+                    <div class="u-nav-popup">
+                      <ul class="u-border-1 u-border-grey-30 u-h-spacing-21 u-nav u-unstyled u-v-spacing-17">
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Communication.html#sec-0e94">Results</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Communication.html#carousel_a6ec">Conclusion</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Communication.html#carousel_7d61">Acknowledgments</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Communication.html#carousel_ed46">References</a>
+                        <li class="u-nav-item"><a
+                            class="u-active-white u-button-style u-nav-link u-text-active-custom-color-4 u-text-custom-color-8 u-text-hover-custom-color-4 u-white"
+                            href="Data-Communication.html#carousel_8aad">The Vaxplorers Team</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-        <img class="u-image u-image-contain u-image-default u-image-2" src="images/VACCINEVERITYLOGO.jpg" alt="" data-image-width="766" data-image-height="115">
-      </div><style class="u-sticky-style" data-style-id="5f9f">.u-sticky-fixed.u-sticky-5f9f, .u-body.u-sticky-fixed .u-sticky-5f9f {
-box-shadow: 0px 2px 8px 0px rgba(128,128,128,1) !important
-}</style></header>
-    <section class="u-clearfix u-container-align-center u-section-1" id="sec-5af0">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/242915609-0.png" alt="" data-image-width="4500" data-image-height="3137">
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <img class="u-image u-image-contain u-image-default u-image-2" src="images/VACCINEVERITYLOGO.jpg" alt=""
+        data-image-width="766" data-image-height="115">
+    </div>
+    <style class="u-sticky-style" data-style-id="5f9f">
+      .u-sticky-fixed.u-sticky-5f9f,
+      .u-body.u-sticky-fixed .u-sticky-5f9f {
+        box-shadow: 0px 2px 8px 0px rgba(128, 128, 128, 1) !important
+      }
+    </style>
+  </header>
+
+  <section class="u-clearfix u-gradient u-section-1" id="sec-7a91">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="">
+        <div class="u-container-layout u-valign-middle u-container-layout-1">
+          <h3 class="gradient u-text u-text-default u-text-1">Data Exploration</h3>
+        </div>
       </div>
-    </section>
-    
-    
-    
-    
-    
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-d432"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-align-left u-small-text u-text u-text-variant u-text-1">@ VaccineVerity 2023. All Rights Reserved.</p>
-      </div></footer>
-  
-</body></html>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-2"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X">
+        <div class="u-container-layout u-container-layout-2">
+          <h3 class="gradient u-text u-text-default u-text-2">Data Preprocessing</h3>
+        </div>
+      </div>
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-3"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-3">
+          <p class="u-text u-text-custom-color-12 u-text-3"><b>
+              <span style="font-weight: 400;">To efficiently execute this stage of the project, reviewing the obtained
+                data types and identifying the extant data levels are conducive measures to infer the appropriate
+                exploration methods.</span></b>
+            <br>
+            <br><b>
+              <span style="font-weight: 400;">We began the preprocessing stage by resizing the collected organized data
+                and dropping the empty rows and negligible columns.</span>
+              <br></b>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/A.png" alt=""
+            data-image-width="1118" data-image-height="379">
+          <p class="u-text u-text-4"> It was deduced that rows with empty values in the ‘Timestamp (DD/MM/YY H: M:S)’
+            column are consequently blank rows. <br>
+            <br>Additionally, the aforesaid columns included in the dropped list are: <br>
+            <br>[‘ID’, ‘Timestamp (DD/MM/YY H: M:S)’, ‘Tweet URL’, ‘Group’, ‘Collector’, ‘Category’, ‘Topic’,
+            ‘Screenshot’, ‘Reviewer’, ‘Review’]. <br>
+            <br>These columns were distinguished as negligible since their values were used to review or identify—not
+            classify—row entries. Thus, they do not have any bearing on the research question.&nbsp;<br>
+          </p>
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-4"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="500">
+        <div class="u-container-layout u-container-layout-4">
+          <h4 class="gradient u-text u-text-5"> General Steps for Preprocessing<span style="font-weight: 400;"></span>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-2" id="carousel_bd8f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-custom-color-12 u-text-1"> After this step, we arrived at a more refined structured
+            data that has 32 columns and 155 rows.<b>
+              <br></b>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/B.png" alt=""
+            data-image-width="1118" data-image-height="179">
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/C.png" alt=""
+            data-image-width="1118" data-image-height="179">
+          <p class="u-text u-text-2"> Of the remaining 32 columns, their respective types are as follows: <br>
+          </p>
+          <p class="u-text u-text-3">
+            <span style="font-weight: 700;"> Qualitative Data</span> – ['Keywords', 'Account Handle', 'Account Name',
+            'Account Bio', 'Account Type', 'Location', 'Tweet', 'Tweet Translated', 'Tweet Type', 'Content Type',
+            'Rating', 'Reasoning', 'Remarks', 'Mentioned or Referenced COVID-19 Vaccine Brand', 'Mentioned or Referenced
+            Other Vaccine/Drugs', 'Peddled Medical Adverse Side Effect', 'Distrust in Vaccine Development', 'Racial,
+            Religious, Cultural, Economic, or Socio-Political Keywords', 'Oppressive Keywords'] <br>
+            <br>
+            <span style="font-weight: 700;">Quantitative Data (Discrete)</span> – [ 'Joined (MM/YYYY)', 'Date Posted
+            (DD/MM/YY H:M:S)’, 'Following', ‘Followers’, 'Likes', 'Replies', 'Retweets', 'Quote Tweets', 'Views', 'No.
+            of Days since Philippines Joined the COVAX Facility (Jul 24, 2020)', 'No. of Days since FDA Approved the
+            First COVID-19 Vaccine (Dec 11, 2020)', 'No. of Days since Arrival of First Batch of COVID-19 Vaccine Doses
+            Committed by the COVAX Facility (Mar 04, 2021)', 'No. of Days since First Detected Cases of Omicron Variant
+            in the Philippines (Aug 02, 2022)'] <br>
+            <br>
+            <span style="font-weight: 700;">Quantitative Data (Continuous)</span> – [ ] <br>
+            <br>
+          </p>
+          <p class="u-text u-text-4"> Additionally, the existing columns and their levels are classified into:</p>
+          <p class="u-text u-text-5">
+            <span style="font-weight: 700;"> Nominal Level</span> – ['Account Type', 'Location', 'Tweet Type', 'Content
+            Type', 'Rating', 'Mentioned or Referenced COVID-19 Vaccine Brand', 'Mentioned or Referenced Other
+            Vaccine/Drugs', 'Peddled Medical Adverse Side Effect', 'Distrust in Vaccine Development'] <br>
+            <br>
+            <span style="font-weight: 700;">Ordinal Level</span> –[] <br>
+            <br>
+            <span style="font-weight: 700;">Interval Level</span> – ['Joined (MM/YYYY)', 'Date Posted (DD/MM/YY H:M:S)',
+            'No. of Days since Philippines Joined the COVAX Facility (Jul 24, 2020)', 'No. of Days since FDA Approved
+            the First COVID-19 Vaccine (Dec 11, 2020)', 'No. of Days since Arrival of First Batch of COVID-19 Vaccine
+            Doses Committed by the COVAX Facility (Mar 04, 2021)', 'No. of Days since First Detected Cases of Omicron
+            Variant in the Philippines (Aug 02, 2022)']&nbsp;<span style="font-style: italic;"></span>
+            <br>
+            <br>
+            <span style="font-size: 0.875rem;">Notes: Pandas Timestamp and Python Datetime are interchangeable data
+              objects that represent dates in the form of integers. <br>
+              <br>The “No. of Days” indicated in the columns listed above may take negative values, which means they
+              occurred before a specified point in time. Since this could be the case, such measurements have no
+              starting zero and are intervals.&nbsp;
+            </span>
+            <br>
+            <br>
+            <span style="font-weight: 700;">Ratio Level</span> – ['Following', ‘Followers’, 'Likes', 'Replies',
+            'Retweets', 'Quote Tweets', 'Views'] <br>
+            <br>
+            <span style="font-weight: 700;">Textual Data</span> – ['Keywords', 'Account Handle', 'Account Name',
+            'Account Bio', 'Tweet', 'Tweet Translated', 'Reasoning', 'Remarks', 'Racial, Religious, Cultural, Economic,
+            or Socio-Political Keywords', 'Oppressive Keywords'] <br>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-3" id="carousel_267c">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1">
+            <span style="font-weight: 700;"></span>Using the <span style="font-weight: 700;">Pandas DataFrame.info()
+            </span>method, we were able to ensure the expected number of cells that have missing values.<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/D.png" alt=""
+            data-image-width="1118" data-image-height="636">
+          <p class="u-text u-text-2">
+            <span style="font-weight: 700;"></span>As for detecting and handling the missing values, the function
+            missing_values_handler() was utilized:<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/unnamed1.png"
+            alt="" data-image-width="1118" data-image-height="308">
+          <p class="u-text u-text-3">
+            <span style="font-weight: 700;"></span>Line 40 initializes a list of columns that have missing values using
+            <span style="font-weight: 700;">DataFrame.isna().any()</span> method:&nbsp;<br>
+            <br>['Account Bio', 'Tweet Translated', 'Quote Tweets', 'Views', 'Remarks', 'Mentioned or Referenced
+            COVID-19 Vaccine Brand', 'Mentioned or Referenced Other Vaccine/Drugs', 'Racial, Religious, Cultural,
+            Economic, or Socio-Political Keywords', 'Oppressive Keywords'].&nbsp;<br>
+            <br>The values of columns 'Tweet Translated', ‘Quote Tweets’, and ‘Views’ are dependent on the entry tweet.
+            Expectedly, they may have empty values when there is no pertinent observation of a tweet’s characteristics.
+            <br>Meanwhile, the rest of the columns in the list above are either optional or have inherent ‘None’ choices
+            and were classified as such during data collection. <br>
+            <br>Line 49 deals with the missing values of ‘Account Bio’, ‘Tweet Translated’, ‘Remarks’, 'Racial,
+            Religious, Cultural, Economic, or Socio-Political Keywords', and 'Oppressive Keywords' using replacement
+            with an arbitrary zero represented by an empty string.&nbsp;<br>
+            <br>This method was used because these columns contain unstructured textual data and will be further refined
+            later through natural language processing. <br>
+            <br>Line 50 handles the missing values of 'Mentioned or Referenced COVID-19 Vaccine Brand' and 'Mentioned or
+            Referenced Other Vaccine/Drugs' using replacement with an arbitrary zero represented by an integer. <br>On
+            the other hand, this approach was applied for these columns given that they contain nominal data and will be
+            encoded later into numerical values. <br>
+            <br>Line 51, for thoroughness, applies the same technique as Line 50 to the columns ‘Quote Tweets’ and
+            ‘Views’, which are members of the ratio data level. <br>While these tweet characteristics are represented as
+            numerical counts, the replacement with the mean method was not applied to avoid introducing bias since these
+            are optional fields. <br>
+            <br>
+          </p>
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-2"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-container-layout-2">
+          <h4 class="gradient u-text u-text-4"> Handling Missing Values/Ensuring No Missing Values</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-4" id="carousel_b11c">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1">
+            <span style="font-weight: 700;"></span>Finally, the total number of missing values in each column can be
+            summarized and confirmed using the output of the method <span
+              style="font-weight: 700;">df.isnull().sum()</span>.&nbsp;<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/F.png" alt=""
+            data-image-width="1118" data-image-height="560">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-5" id="carousel_35ed">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1">
+            <span style="font-weight: 700;"></span>Following the imputation steps, it is noticeable using <span
+              style="font-weight: 700;">info()</span> method that there are discrepancies with the data types of the
+            columns.<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/G.png" alt=""
+            data-image-width="1118" data-image-height="631">
+          <p class="u-text u-text-2">
+            <span style="font-weight: 700;"></span>Many columns have <span style="font-weight: 700;">object
+              dtype</span>, meaning these columns might contain strings or mixed types of data. Furthermore, some
+            columns are expected to contain numerical values and have object dtype instead. <br>
+            <br>This needs to be resolved first before treating possible outliers because the values must be uniform for
+            statistical operations to be applicable.&nbsp;<br>
+          </p>
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-2"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-container-layout-2">
+          <h4 class="gradient u-text u-text-3"> Ensuring Formatting Consistency (date, labels, etc.)</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-6" id="carousel_6b84">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-custom-color-12 u-text-1"> The function <span
+              style="font-weight: 700;">formatting_handler()</span> was used to address formatting inconsistencies in
+            the data:<b>
+              <br></b>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/H.png" alt=""
+            data-image-width="1118" data-image-height="591">
+          <p class="u-text u-text-2">
+            <span style="font-weight: 700;"></span>Lines 59-63 initialize lists that group all columns into their
+            appropriate data level classification. <br>
+            <br>Lines 66-79 then transmute the non-conforming values accordingly. The following conditions were
+            prioritized for this method:&nbsp;<br>
+          </p>
+          <p class="u-text u-text-3">
+            <span style="font-weight: 700;"></span>As recommended by Pandas documentation, <span
+              style="font-weight: 700;">StringDtype </span>is preferred over<span style="font-weight: 700;"> object
+              dtype </span>because the latter can accidentally store non-strings. Thus, instances of <span
+              style="font-weight: 700;">object dtype </span>columns that strictly contain string literals were
+            transformed.&nbsp;<br>
+            <br>Records of date and timestamps were initially relegated also as<span style="font-weight: 700;"> object
+              dtype </span>and were thus changed to DatetimeTZ dtype.&nbsp;<br>
+            <br>Columns that have object dtype and must be comprised of numerical integer values, though already
+            compliant, were still converted to <span style="font-weight: 700;">int64 </span>data type as a
+            precaution.<br>
+            <br>Columns that must contain numerical float values, meanwhile, were stripped of comma separators before
+            converting to <span style="font-weight: 700;">float64 </span>data type.<br>
+          </p>
+          <p class="u-text u-text-4">
+            <span style="font-weight: 700;"></span>Line 82 handles the remaining columns of unstructured textual data by
+            transforming them into <span style="font-weight: 700;">StringDtype </span>for later language processing.<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-7" id="carousel_f7a9">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-custom-color-12 u-text-1"> Finally, <span style="font-weight: 700;">info()</span>
+            method was used again to check that the appropriate data types for all columns and date formatting
+            requirements were satisfied.<b>
+              <br></b>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/I.png" alt=""
+            data-image-width="1118" data-image-height="635">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-8" id="carousel_22b9">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1">
+            <span style="font-weight: 700;"></span>As fulfilled in the previous preprocessing steps, we were able to
+            identify which columns contain nominal data and would therefore require categorical encoding: <br>
+            <br>['Account Type', 'Location', 'Tweet Type', 'Content Type', 'Rating', 'Mentioned or Referenced COVID-19
+            Vaccine Brand', 'Mentioned or Referenced Other Vaccine/Drugs', 'Peddled Medical Adverse Side Effect',
+            'Distrust in Vaccine Development'] <br>
+            <br>Global Python dictionaries were first initialized for data encoding and later decoding during the
+            analysis stage.&nbsp;<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/J.png" alt=""
+            data-image-width="1118" data-image-height="480">
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/K.png" alt=""
+            data-image-width="1118" data-image-height="248">
+          <p class="u-text u-text-2"> Apart from dictionaries, empty lists were also created as ‘catch basins’ for
+            optional subcategories included in the categorical data. These will be transformed into <span
+              style="font-weight: 700;">Series dtype</span> for analysis afterward.
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-3" src="images/L.png" alt=""
+            data-image-width="1118" data-image-height="100">
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-2"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-container-layout-2">
+          <h4 class="gradient u-text u-text-3"> Categorical Data Encoding&nbsp;<br>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-9" id="carousel_3950">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1"><b></b>The function <span style="font-weight: 700;">categ_data_encoder()</span>
+            assigns integer values to the categorical data using the appropriate dictionary:<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/M.png" alt=""
+            data-image-width="1117" data-image-height="460">
+          <p class="u-text u-text-2">
+            <span style="font-weight: 700;"></span>A for-loop that iterates over the columns with nominal data and
+            accesses their values was the main approach used for this step of numerical encoding.&nbsp;<br>
+            <br>Since dictionaries were already made available for mapping the categories, <span
+              style="font-weight: 700;">get()</span> &nbsp;method allowed us to obtain the corresponding integer values.
+            <br>
+            <br>Some columns required additional string manipulation to extract the data, like the ‘Location’
+            characteristic, because it contains an optional substring field for ‘city name’ that cannot be explicitly
+            integrated into category labels.&nbsp;<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/N.png" alt=""
+            data-image-width="1118" data-image-height="230">
+          <p class="u-text u-text-3">
+            <span style="font-weight: 700;"></span>As for columns that may have more than one category, such as the
+            ‘Content Type’, we used string concatenation to represent a sequence of one-digit integer values, each
+            corresponding to a label.<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-3" src="images/O.png" alt=""
+            data-image-width="1119" data-image-height="537">
+          <p class="u-text u-text-4">
+            <span style="font-weight: 700;"></span>Lastly, for nominal columns that might contain more than two
+            subcategories e.g., 'Peddled Medical Adverse Side Effect', we handled the encoding by passing conditional
+            statements and manipulating the obtained sublists. <br>
+            <br>Since we only stored the primary category labels, we used the empty lists that were instantiated
+            earlier. After converting to <span style="font-weight: 700;">Series dtype</span>, we can use the textual
+            data as variables of natural language processing and other steps later.&nbsp;<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-4" src="images/P.png" alt=""
+            data-image-width="1118" data-image-height="152">
+          <p class="u-text u-text-5">
+            <span style="font-weight: 700;"></span>Upon completing this step, we also ensured that the data types of the
+            columns are numerical in the form of <span style="font-weight: 700;">int64</span>. It can also be confirmed
+            using <span style="font-weight: 700;">
+              <span style="font-weight: 400;">info</span>
+            </span>
+            <span style="font-weight: 700;">()</span> method that the data types were no longer strings literals.<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-5" src="images/Q.png" alt=""
+            data-image-width="1118" data-image-height="601">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-10" id="carousel_0803">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1">
+            <span style="font-weight: 700;"></span>To detect outliers, we adhered to the computation of z-scores and
+            identifying data points that have greater than +3 or less than -3 z-scores. <br>
+            <br>With the aid of the function <span style="font-weight: 700;">outliers_handler()</span>, separate
+            dataframes for columns pertinent to temporal data, interval data, and rational data were created to store
+            characteristics about outlier data itself<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/R.png" alt=""
+            data-image-width="1118" data-image-height="172">
+          <p class="u-text u-text-2">
+            <span style="font-weight: 700;"></span>Moving forward, for-loops that iterate through the data features
+            serve as the primary tool for obtaining the necessary statistical values.&nbsp;<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/S.png" alt=""
+            data-image-width="1118" data-image-height="326">
+          <p class="u-text u-text-3">
+            <span style="font-weight: 700;"></span>The function calculates the mean and standard deviation, which are
+            used to calculate individual z-scores to be compared.&nbsp;<br>
+            <br>It then adds the verified outliers and their z-scores to a list for the current column and is repeated
+            for each characteristic that contain temporal data.&nbsp;<br>
+            <br>These steps were also applied to the other groups of data level—interval and rational—and the results
+            were stored in separate dictionaries.&nbsp;<br>
+          </p>
+          <p class="u-text u-text-4">
+            <span style="font-weight: 700;"></span>Once the function is done processing, it creates a<span
+              style="font-weight: 700;"> DataFrame dtype</span> from the dictionaries using the built-in pandas utility.
+            We used <span style="font-weight: 700;">print()</span> as a straightforward method to check the obtained
+            outliers.<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-3" src="images/T.png" alt=""
+            data-image-width="1118" data-image-height="150">
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-4" src="images/U.png" alt=""
+            data-image-width="1118" data-image-height="305">
+          <p class="u-text u-text-5">
+            <span style="font-weight: 700;"></span>From the output, no outliers were detected in any of the columns
+            under the groups of temporal and interval data. As for rational data, we found 1 to 2 outliers with
+            significantly higher z-scores in most of the columns. Additionally, there were 7 outliers in the ‘Following’
+            column. <br>
+            <br>We deduced that they are heavily skewing the mean and standard deviation. However, we also concluded
+            that they are not representative of the whe whole data. <br>Most of the detected outliers are unique
+            individual cases dependent on the Twitter account owner i.e., the tweet was posted by an account that has a
+            lot of influence (followers/following counts). <br>
+            <br>As a solution, the method of winsorization to a fixed percentile was applied. We opted not to drop the
+            rows because our research question puts more emphasis on the context of the tweets, not on the account who
+            posted them.&nbsp;<br>
+            <br>The for-loops that iterate through the columns were subsequently modified to execute the adjustments to
+            the outlier values:&nbsp;<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-5" src="images/V.png" alt=""
+            data-image-width="1118" data-image-height="496">
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-6" src="images/W.png" alt=""
+            data-image-width="1118" data-image-height="233">
+          <p class="u-text u-text-6">
+            <span style="font-weight: 700;"></span>The auxiliary function winsorization_technique() defines a lower and
+            upper threshold for the dataset based on the 25th and 75th percentiles.&nbsp;<br>
+            <br>A multiplier is chosen—2 represents the smallest 2% and largest 2% of values—and is multiplied to the
+            Interquartile Range that represents the spread of the dataset.&nbsp;<br>
+            <br>Outliers that are below the lower threshold are replaced with the 25th percentile minus the multiplier
+            times the IQR. As for outliers above the upper threshold, they are replaced with the 75th percentile plus
+            the multiplier times the IQR.&nbsp;<br>
+          </p>
+          <img class="u-image u-image-default u-preserve-proportions u-image-7" src="images/X.png" alt=""
+            data-image-width="1118" data-image-height="306">
+          <p class="u-text u-text-7">
+            <span style="font-weight: 700;"></span>Upon executing the modified program, we observed that there are
+            significant differences between the mean and standard deviation values of the old output with the new
+            output.&nbsp;<br>
+            <br>The z-scores of the recorded outliers were also recomputed and can be confirmed that they are now within
+            the acceptable range.&nbsp;<br>
+          </p>
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-2"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-container-layout-2">
+          <h4 class="gradient u-text u-text-8"> Handling Outliers</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-11" id="carousel_fff1">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-align-justify u-text u-text-1">
+            <span style="font-weight: 700;"></span>In preparation for the machine learning steps, we applied four
+            scaling methods to our dataset using iterative programming techniques and some of Python’s computational
+            libraries. To emphasize, these methods were only applied to data features that have inherent numeric values.
+            <br>
+            <br>We started off with <span style="font-weight: 700;">data_min_max_scaler()</span> function, or more
+            commonly-known as normalization:<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/Y.png" alt=""
+            data-image-width="1118" data-image-height="417">
+          <p class="u-align-justify u-text u-text-2">
+            <span style="font-weight: 700;"></span>It takes the minimum and maximum values in a specific data feature
+            and utilizes these to scale the data point to a range between 0 and 1.&nbsp;<br>
+            <br>To get the normalized value of x, the minimum values is subtracted from it and the result is divided by
+            the range, or the difference between the maximum and minimum values.&nbsp;<br>
+          </p>
+          <p class="u-align-left u-text u-text-3">
+            <span style="font-weight: 700;"></span>Following normalization, we also implement z-score normalization or
+            standardization using the function,<span style="font-weight: 700;"> data_standardizer():</span>
+            <br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/Z.png" alt=""
+            data-image-width="1118" data-image-height="456">
+          <p class="u-align-justify u-text u-text-4">
+            <span style="font-weight: 700;"></span> The z-score computation was already explained in previous sections.
+            But another key detail to standardization is that it assume a normally distributed dataset.&nbsp;<br>
+            <br>To ascertain this prerequisite, we used the Shapiro-Wilk test using the shapiro function from SciPy,
+            which then returns a p-value corresponding to a significance level from normality.&nbsp;<br>
+            <br>Upon running the program, we found that our dataset is not normally distributed for the features in the
+            <span style="font-weight: 700;">interval_data_columns</span> and <span
+              style="font-weight: 700;">rational_data_columns</span>.<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-3" src="images/ZA.png" alt=""
+            data-image-width="1118" data-image-height="190">
+          <p class="u-align-justify u-text u-text-5">
+            <span style="font-weight: 700;"></span>For comprehensiveness, however, we still opted to standardize our
+            dataset as a future reference.<br>
+          </p>
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-2"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-container-layout-2">
+          <h4 class="gradient u-text u-text-6"> Normalization/Standardization/Scaling</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-12" id="carousel_c843">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1"> Given that we our dataset is not leaning towards normal distribution, we decided
+            to apply power transformation to address possible skewness or th heavy tails using <span
+              style="font-weight: 700;">data_power_transformer():</span>&nbsp;<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-10 u-image-1" src="images/ZB.png" alt=""
+            data-image-width="1118" data-image-height="229">
+          <p class="u-text u-text-2">
+            <span style="font-weight: 700;"></span>The Yeo-Johnson power transformation, as pulled also from Python
+            SciPy library, uses a lambda parameter to scale the data points.&nbsp;<br>
+            <br>We also chose this method because it can handle both positive and negative values that are present in
+            our dataset, unlike its curtailed version—Box-Cox method.&nbsp;<br>
+          </p>
+          <p class="u-text u-text-3"> Lastly, <span style="font-weight: 700;">data_unit_vector_scaler() </span>is a
+            function that scales the characteristics of our dataset to have a consistent magnitude of 1. We concluded
+            that this additional step will be useful later for feature analysis.<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/ZC.png" alt=""
+            data-image-width="1118" data-image-height="358">
+          <p class="u-text u-text-4">
+            <span style="font-weight: 700;"></span>Unlike min-max scaling, this approach normalizes the magnitude of
+            vectors using the Euclidian norm, computed through the aid of NumPy’s built-in method.&nbsp;<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-gradient u-section-13" id="carousel_c34f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1"> The four functions that were introduced above were implemented to transform four
+            copies of the original dataframe.<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-10 u-image-1" src="images/ZD.png" alt=""
+            data-image-width="1124" data-image-height="152">
+          <p class="u-text u-text-2"> Subsequently, <span style="font-weight: 700;">print()</span> can be used to
+            immediately check that the data points in the aforesaid copies are scaled within the expected ranges and
+            magnitudes.<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/ZE.png" alt=""
+            data-image-width="1118" data-image-height="478">
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-3" src="images/ZF.png" alt=""
+            data-image-width="1118" data-image-height="500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="u-clearfix u-gradient u-section-14" id="carousel_13f0">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-align-justify u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1"
+        data-animation-name="customAnimationIn" data-animation-duration="1500">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1">
+            <span style="font-weight: 700;"></span>Our proposed research question and hypotheses require us to derive
+            conclusions from the contextual perspective of our gathered tweets. As such, we employ the stage of NLP to
+            meet this requirement.<br>
+          </p>
+          <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-2"
+            data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+            data-animation-delay="0">
+            <div class="u-container-layout u-container-layout-2">
+              <h4 class="gradient u-text u-text-2"> Preparation of Data for NLP&nbsp;<br>
+              </h4>
+            </div>
+          </div>
+          <p class="u-text u-text-3">
+            <span style="font-weight: 700;"></span>The preliminary method was executed by onverting Dataframe to a list
+            of texts:<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/unnamed2.png"
+            alt="" data-image-width="676" data-image-height="137">
+          <p class="u-text u-text-4">
+            <span style="font-weight: 700;"></span>In order to accomplish Natural Language Processing (NLP), the first
+            step is to convert the dataframe into a list of texts. This is simply done by isolating the “Tweet” column
+            and dropping the rows with NaN values through <span style="font-weight: 700;">.loc()</span> and <span
+              style="font-weight: 700;">dropna()</span> methods respectively. And then, we convert the dataframe to a
+            list using the <span style="font-weight: 700;"> values()</span> and <span
+              style="font-weight: 700;">tolist()</span> methods.<br>
+          </p>
+          <p class="u-text u-text-5">
+            <span style="font-weight: 700;"></span>This step is crucial when it comes to preparing the dataset for NLP.
+            Properly handling the emojis will allow for easier processing of the data and simply removing them from the
+            text won’t do since they might contain important details about the text.&nbsp;<br>
+            <br>Another vital task before proceeding to NLP is to translate the text to English as it helps us
+            standardize the format and remove the stopwords from the text which is one of the steps in NLP.&nbsp;<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/image1.png" alt=""
+            data-image-width="371" data-image-height="164">
+          <p class="u-text u-text-6">
+            <span style="font-weight: 700;"></span>These steps also allow us to standardize the texts and remove
+            irrelevant characters from them. By doing these, we won’t count the same words twice (i.e. “Data Science” is
+            the same as “data science”)<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-3" src="images/image.png" alt=""
+            data-image-width="849" data-image-height="266">
+          <p class="u-text u-text-7">
+            <span style="font-weight: 700;"></span>Tokenization transforms the raw texts into smaller chunks of data
+            that a computer can easily process while removing stop words, which are words that are highly used in the
+            English language and very insignificant (i.e. pronouns, articles, etc.)<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-4" src="images/image2.png" alt=""
+            data-image-width="833" data-image-height="290">
+          <p class="u-text u-text-8">
+            <span style="font-weight: 700;"></span>Stemming refers to the process of removing the last few characters of
+            a word in order to extract the root word. In this way, we can further reduce the number of words to process
+            given that the word “exploration” will be the same as “explore”.&nbsp;<br>
+            <br>However, the problem with Stemming is that it will yield inaccurate and unclear results.&nbsp;<br>
+          </p>
+          <p class="u-text u-text-9">
+            <span style="font-weight: 700;"></span>Using the same example as earlier, performing stemming results in
+            “explor”. This is where Lemmatization comes in. Lemmatization is quite similar to Stemming since its goal is
+            to reduce a given word to its root.&nbsp;<br>
+          </p>
+          <img class="u-image u-image-round u-preserve-proportions u-radius-20 u-image-5" src="images/image3.png" alt=""
+            data-image-width="669" data-image-height="654">
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-3"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-container-layout-3">
+          <h4 class="gradient u-text u-text-10"><b>Natural Language Processing</b>
+          </h4>
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-4"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-valign-middle u-container-layout-4">
+          <h4 class="gradient u-text u-text-11"> Lowercasing and Punctuation Removal<br>
+          </h4>
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-5"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-valign-middle u-container-layout-5">
+          <h4 class="gradient u-text u-text-12"> Tokenization and Stop Words Removal<br>
+          </h4>
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-6"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-container-layout-6">
+          <h4 class="gradient u-text u-text-13"> Stemming and Lemmatization<br>
+          </h4>
+        </div>
+      </div>
+      <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-7"
+        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="X"
+        data-animation-delay="0">
+        <div class="u-container-layout u-valign-middle u-container-layout-7">
+          <h4 class="gradient u-text u-text-14"> Handling the Emojis and Translating Tagalog to English<br>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-d432">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <p class="u-align-left u-small-text u-text u-text-variant u-text-1">@ VaccineVerity 2023. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
