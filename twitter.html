@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter Clone - Final</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous">
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --twitter-color: #50b7f5;
+  --twitter-background: #e6ecf0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.sidebarOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font: inherit;
+}
+
+.searchInput{
+  text-align: justify;
+}
+
+.sidebarOption .material-icons,
+.fa-twitter {
+  padding: 20px;
+}
+
+.sidebarOption h2 {
+  font-weight: thin;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.sidebarOption:hover {
+  background-color: var(--twitter-background);
+  border-radius: 30px;
+  color: var(--twitter-color);
+  transition: color 100ms ease-out;
+}
+
+.sidebarOption.active {
+  color: var(--twitter-color);
+}
+
+.sidebar__tweet {
+  width: 100%;
+  background-color: var(--twitter-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+}
+
+.sidebar {
+  align-items: self-end;
+  position: sticky;
+  min-width: 250px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: sticky;
+}
+
+.fa-twitter {
+  color: var(--twitter-color);
+  font-size: 30px;
+}
+
+/* feed */
+.feed {
+  flex: 0.5;
+  border-right: 1px solid var(--twitter-background);
+  border-left: 1px solid var(--twitter-background);
+  min-width: fit-content;
+  overflow-y: scroll;
+}
+
+.feed__header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  border: 1px solid var(--twitter-background);
+  padding: 15px 20px;
+}
+
+.feed__header h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+::-webkit-scrollbar {
+display: none;
+
+}
+
+.feed {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* tweet box */
+.tweetbox__input img {
+  border-radius: 50%;
+  height: 40px;
+}
+
+.tweetBox {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--twitter-background);
+  padding-right: 10px;
+}
+
+.tweetBox form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweetbox__input {
+  display: flex;
+  padding: 20px;
+}
+
+.tweetbox__input input {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+
+.twitter-share-button {
+  /* align tweet to left*/
+  margin-left: auto;
+}
+/* post */
+
+.post {
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* widgets */
+.widgets {
+  flex: 0.5;
+}
+
+.widgets__input {
+  display: flex;
+  align-items: center;
+  background-color: var(--twitter-background);
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.widgets__input input {
+  border: none;
+  background-color: var(--twitter-background);
+}
+
+.widgets__searchIcon {
+  color: gray;
+}
+
+.widgets__widgetContainer {
+  margin-top: 15px;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #f5f8fa;
+  border-radius: 20px;
+}
+
+.widgets__widgetContainer h2 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- sidebar starts -->
+
+  <div class="sidebar">
+    <i class="fab fa-twitter"></i>
+    <div class="sidebarOption active">
+      <span class="material-icons"> home</span>
+      <h2>Home</h2>
+    
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> search</span>
+      <h2>Explore</h2>
+    </div>
+    <div class="sidebarOption">
+      <span class="material-icons"> notifications_none</span>
+      <h2>Notifications</h2>
+    </div>
+    <div class="sidebarOption">
+      <span class="material-icons"> mail_outline</span>
+      <h2>Messages</h2>
+    </div>
+    <div class="sidebarOption">
+      <span class="material-icons"> bookmark_border</span>
+      <h2>Bookmarks</h2>
+    </div>
+    <div class="sidebarOption">
+      <span class="material-icons"> list_alt</span>
+      <h2>Lists</h2>
+    </div>
+    <div class="sidebarOption">
+      <span class="material-icons"> perm_identity</span>
+      <h2>Profile</h2>
+    </div>
+    <div class="sidebarOption">
+      <span class="material-icons"> more_horiz</span>
+      <h2>More</h2>
+    </div>
+    <button class="sidebar__tweet">Tweet</button>
+  </div>
+
+  <!-- sidebar ends -->
+  <!-- feed starts -->
+
+  <div class="feed">
+
+    <div class="feed__header">
+      <h2>Home</h2>
+    </div>
+    <!-- tweetbox starts -->
+    <div class="tweetBox">
+      <form id="searchForm">
+        <div class="tweetbox__input">
+          <img src="profile.png" alt="images">
+          <input id="searchInput" type="text" placeholder="Here's some of the tweets we have collected!">
+        </div>
+        <a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?text=https://lantingkurt.github.io/VaccineVerity/"
+        data-size="large">
+      Tweet</a>
+      </form>
+    </div>
+    <!-- tweetbox ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          <a href="https://twitter.com/hashtag/DuterteTraydor?src=hash&amp;ref_src=twsrc%5Etfw">
+            #DuterteTraydor
+          </a>
+          Patay na mga Pilipino dahil sa inefficiency ng bakuna nila, lalo
+          pang mamamatay sa pagnanakaw sa natural resources natin. Tapos
+          tatakbo pa anak mong wala namang achievements bukod sa manapak ng
+          sheriff. Dipa bumalik sa pinanggalingan nyo yang pamilya nyong
+          salot!
+        </p>
+        — jcarlos88 (@ReplyCarlos1988)
+        <a href="https://twitter.com/ReplyCarlos1988/status/1427480200586039336?ref_src=twsrc%5Etfw">
+          August 17, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          Nanay, maawa kayo sa inyong mga anak. Pigilin ang vax. Si Maddie de
+          Garay ay biktima ng Pfizer at nagkasakit ng neurological disorder at
+          paralysis. Milyon ang walang pera pampagamot sa side effects -
+          libu-libo (45,000 sa U.S.) na rin ang namatay sa so-called bakuna
+          <a href="https://twitter.com/MARoxas?ref_src=twsrc%5Etfw">
+            @MARoxas
+          </a>
+          <a href="https://t.co/9UiILHusIv"> pic.twitter.com/9UiILHusIv</a>
+        </p>
+        — Kim Iverest (@KimIverest)
+        <a href="https://twitter.com/KimIverest/status/1490741434282311681?ref_src=twsrc%5Etfw">
+          February 7, 2022
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="en">
+          They made a viruz that is not true that is NO CURE for it. And now
+          they a vaccine that kills people that after two years . When you
+          take the vaccines that they have created. So better take ANTIBIOTIC
+          MEDICINES for cough that the vaccines that kills people after two
+          years.
+          <a href="https://t.co/8KI6aGZEH9"> pic.twitter.com/8KI6aGZEH9</a>
+        </p>
+        — Roberto Gariando (@RobertoGariand1)
+        <a href="https://twitter.com/RobertoGariand1/status/1408981365786243074?ref_src=twsrc%5Etfw">
+          June 27, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          Unti-unti na kaming pinapatay ng gobyernong ito sa walang
+          pakundangang pagpapatupad ng mga walang silbing lockdown, quarantine
+          at health protocols. Idagdag pa nito ang nakakamatay na covid-19
+          vaccine sapagkat tao ang pinagpapraktisan.
+        </p>
+        — philpatriot (@juandel40496920)
+        <a href="https://twitter.com/juandel40496920/status/1372083290723688448?ref_src=twsrc%5Etfw">
+          March 17, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="en">
+          How many are vaccinated with covid? In Europe, Israel, Singapore,
+          more &amp; more vaccinated people are infected with covid. Stop
+          spreading fallacies. Natural immunity, esp w/ those who recovered fr
+          covid, is 27 times stronger than any EXPERIMENTAL BIOLIGICAL AGENT.
+          NO VAX for them!
+        </p>
+        — Kim Iverest (@KimIverest)
+        <a href="https://twitter.com/KimIverest/status/1481645061914136578?ref_src=twsrc%5Etfw">
+          January 13, 2022
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          Walang kwenta yung vaccine mas lalo pa dumami covid
+        </p>
+        — Mike (@Miketaganas1)
+        <a href="https://twitter.com/Miketaganas1/status/1375690224227913730?ref_src=twsrc%5Etfw">
+          March 27, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="en">
+          “OFW na nabakunahan na ng Covid-19 vaccine, nagpositibo sa sakit sa
+          Mandaue City.” So why be vaccinated if it defeats the purpose. THIS
+          IS A BIG QUESTION THAT MUST ANSWERED BY THE GOV’T ESP THOSE WHO
+          AUTHORED THE VACCINE!!!
+        </p>
+        — philpatriot (@juandel40496920)
+        <a href="https://twitter.com/juandel40496920/status/1362581160828624896?ref_src=twsrc%5Etfw">
+          February 19, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          yung mga bansa na puro Pfizer at Moderna at Astra ang bakuna? aba
+          kung ganun din dyan sa Pinas, walang isyu kung hindi sabihin
+          <br>
+          pero kung 50.4 ang efficacy rate ng bakuna mo, at maraming kasong
+          COVID namatay na nabakunahan ng Sinovac aba eh sinong gusto pang
+          magpabakuna? 🤣🤣
+        </p>
+        — Narcos Nightbreaker (@PaladinWars)
+        <a href="https://twitter.com/PaladinWars/status/1395323248808628224?ref_src=twsrc%5Etfw">
+          May 20, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          Ganyan ang SINOVAC. Bakit ka magpapaturok niyan kung ineffective
+          naman. Hindi pa din alam ang long term side effects ng vaccine na
+          iyan. May ulol tayong Presidente na bumili ng mas mahal na bakuna,
+          pero alam ng mga mamamayan na sablay. Iturok iyan sa lahat ng mga
+          DDS.
+          <a href="https://t.co/0pFC48Of2p"> pic.twitter.com/0pFC48Of2p</a>
+        </p>
+        — John Makabayan (@JunSandoval5)
+        <a href="https://twitter.com/JunSandoval5/status/1407683717338959872?ref_src=twsrc%5Etfw">
+          June 23, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          Sinovac is not an effective vaccine. The Chinese manufacturers even
+          suggest to mix it with other available vaccines out there. Google
+          ninyo pa latest findings. Sana naman, last order ninyo na yan! Ay oo
+          nga pala, karamihan nga pala ng bakuna natin, puro nga lang pala
+          donations.
+          <a href="https://t.co/HUYgP5DBe5"> https://t.co/HUYgP5DBe5</a>
+        </p>
+        — Leonor Rivera 👑 (@itsleonorrivera)
+        <a href="https://twitter.com/itsleonorrivera/status/1381200879982768128?ref_src=twsrc%5Etfw">
+          April 11, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          Stop vaccination! Dami na ang vaccine deaths at vaccine injuries sa
+          Pilipinas! Sa America, confirmed mahigit 45,000 namatay sa 2nd dose
+          ng bakuna at may 948,000 ang naparalisa, sakit sa utak, heart
+          disease, disorder sa regla, pagkamatay ng sanggol, tinnitus, etc!
+          <a href="https://twitter.com/lenirobredo?ref_src=twsrc%5Etfw">
+            @lenirobredo
+          </a>
+        </p>
+        — Kim Iverest (@KimIverest)
+        <a href="https://twitter.com/KimIverest/status/1482060654618226688?ref_src=twsrc%5Etfw">
+          January 14, 2022
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          May masamang epekto yang vaccines na yan in the long run. Bakit
+          hindi nyo pakinggan ang mga nagsasabing hindi ito maganda sa
+          katawan? madami nang datos at istorya ng vaccine injuries na pilit
+          sinusupress ng mainstream media. Gawa ng mga elite yang COVID at
+          bakuna.
+        </p>
+        — Nick Arenas (@nic_arenas)
+        <a href="https://twitter.com/nic_arenas/status/1550309342775488512?ref_src=twsrc%5Etfw">
+          July 22, 2022
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="en">
+          We need to review efficacy and safety data. This is a must. I’m
+          raising a red flag🚩
+          <br>
+          <br>
+          Pumasa sa Vaccine Expert Panel technical review ang bakuna kontra
+          COVID-19 ng Sinovac at Clover Biopharmaceuticals--parehong mula sa
+          China.
+          <br>
+          <br>
+          FULL STORY:
+          <a href="https://t.co/jWhqWdp2kj"> https://t.co/jWhqWdp2kj</a>
+          <a href="https://t.co/MRUHLHMzvn"> pic.twitter.com/MRUHLHMzvn</a>
+        </p>
+        — Tony Leachon MD (@DrTonyLeachon)
+        <a href="https://twitter.com/DrTonyLeachon/status/1338138513984778250?ref_src=twsrc%5Etfw">
+          December 13, 2020
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          Panawagan ng grupo, itigil na ang pagsusuot ng facemask, lockdown at
+          pagbabakuna kontra COVID-19 dahil wala umanong COVID-19. | via
+          <a href="https://twitter.com/jhomer_apresto?ref_src=twsrc%5Etfw">
+            @jhomer_apresto
+          </a>
+          <a href="https://t.co/8biPTuKo6e"> pic.twitter.com/8biPTuKo6e</a>
+        </p>
+        — DZBB Super Radyo (@dzbb)
+        <a href="https://twitter.com/dzbb/status/1439152845039681539?ref_src=twsrc%5Etfw">
+          September 18, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="en">
+          Actually baliktad. Unvaccinated needs to be protected from the
+          vaccinated. Kayo ang carrier ng variants.
+          <a href="https://t.co/kpuEudp81W"> pic.twitter.com/kpuEudp81W</a>
+        </p>
+        — ♡Nadiuuh🇺🇸 (@iamjeangrey)
+        <a href="https://twitter.com/iamjeangrey/status/1438772475127468034?ref_src=twsrc%5Etfw">
+          September 17, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="en">
+          Expectation: Getting Covid Vaccines will spare you from
+          hospitalization and death. Reality:
+          <a href="https://t.co/q484wBrF3d"> pic.twitter.com/q484wBrF3d</a>
+        </p>
+        — ♡Nadiuuh🇺🇸 (@iamjeangrey)
+        <a href="https://twitter.com/iamjeangrey/status/1478596470559617028?ref_src=twsrc%5Etfw">
+          January 5, 2022
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          Ganyan ang SINOVAC. Bakit ka magpapaturok niyan kung ineffective
+          naman. Hindi pa din alam ang long term side effects ng vaccine na
+          iyan. May ulol tayong Presidente na bumili ng mas mahal na bakuna,
+          pero alam ng mga mamamayan na sablay. Iturok iyan sa lahat ng mga
+          DDS.
+          <a href="https://t.co/0pFC48Of2p"> pic.twitter.com/0pFC48Of2p</a>
+        </p>
+        — John Makabayan (@JunSandoval5)
+        <a href="https://twitter.com/JunSandoval5/status/1407683717338959872?ref_src=twsrc%5Etfw">
+          June 23, 2021
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+    <!-- post starts -->
+    <div class="post">
+      <blockquote class="twitter-tweet">
+        <p dir="ltr" lang="tl">
+          Dito we have two neighbors vaccinated pero patay did tinamaan din
+          ang virus hindi effective yung bakuna na iyan
+          <a href="https://t.co/iCui3nlMZb"> https://t.co/iCui3nlMZb</a>
+          <a href="https://t.co/bENVE084m4"> pic.twitter.com/bENVE084m4</a>
+        </p>
+        — Louie Yap (@LouieYap9)
+        <a href="https://twitter.com/LouieYap9/status/1482058269480812547?ref_src=twsrc%5Etfw">
+          January 14, 2022
+        </a>
+      </blockquote>
+      <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+    </div>
+    <!-- post ends -->
+
+  </div>
+
+
+  <!-- feed ends -->
+  <!-- widgets starts -->
+  <div class="widgets">
+    <div class="widgets__input">
+      <span class="material-icons widgets__searchIcon"> search</span>
+      <input type="text" placeholder="Search Twitter">
+    </div>
+    <div class="widgets__widgetContainer">
+      <h2>What's happening?</h2>
+      <blockquote class="twitter-tweet">
+        <p lang="en" dir="ltr">
+          ‘Buying Twitter was expensive. Free speech is priceless’. .
+          <a href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw">
+            @elonmusk
+          </a>
+          <a href="https://t.co/NHkLCmNoTS">pic.twitter.com/NHkLCmNoTS</a>
+        </p>
+        &mdash; Kerri Gray (@kerrikgray)
+        <a href="https://twitter.com/kerrikgray/status/1661764022570565632?ref_src=twsrc%5Etfw">
+          May 25, 2023
+        </a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </div>
+  <!-- widgets ends -->
+</body>
+
+</html>
